@@ -14,4 +14,5 @@ Outro conceito é o chamado SRP - Single Responsibility Principle, traduzido par
 
 Também usaremos Sass para conseguirmos fazer o CSS mais rápido, e Css Modules para não termos o problema de sobreposição de CSS de um componente para outro. Também aprenderemos sobre comunicação entre componentes com o Props, e sobre o estado interno de um componente com o State.
 
-Caso você seja um veterano em React, também analisaremos como funciona uma transição/refatoração de um Class component, uma forma antiga, para um Function component, que é uma forma mais atual de se escrever React, entendendo a diferença deles, o motivo do Function component ser priorizado, entre outras coisas.
+Caso você seja um veterano em React, também analisaremos como funciona uma transição/refatoração de um Class component, uma forma antiga, para um Function component, que é uma forma mais atual de se escrever React, entendendo a diferença deles, o motivo do Function component ser priorizado, entre outras coisas
+
