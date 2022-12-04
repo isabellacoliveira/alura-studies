@@ -19,6 +19,7 @@ function App() {
   // criar função de finalizar tarefa 
   function endTask(){
     if(selected){
+      // esta como undefined pois nao vamos estar selecionando nada 
       setSelected(undefined)
       setTasks(oldTasks => oldTasks.map(task => {
         if(task.id === selected.id){

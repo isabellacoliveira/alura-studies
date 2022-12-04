@@ -1,5 +1,3 @@
-import { canHaveDecorators } from "typescript"
-
 export function timeForSeconds(time: string){
     const [hours = '0', minutes = '0', seconds = '0'] = time.split(":")
 
