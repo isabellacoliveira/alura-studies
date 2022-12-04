@@ -4,18 +4,15 @@ import style from './Cronometro.module.scss';
 import { timeForSeconds } from "../../common/utils/time";
 import { ITask } from "../../types/itask";
 import { useEffect, useState } from 'react'; 
-import { Decipher } from "crypto";
-import { endianness } from "os";
 
 interface Props {
-    selected: ITask | undefined
-    // vamos passar a função aqui 
+    selected: ITask | undefined, 
     endTask: () => void
 }
 
-// vamos ter que pegar o finalizar tarefa como prop 
 export default function Cronometro({ selected, endTask } : Props ){
-    const [time, setTime] = useState<number>(timeForSeconds(String(selected?.time)))
+    const [time, setTime] = useState<number>();
+
     useEffect(() => {
         if(selected?.time) {
             setTime(timeForSeconds(selected.time))
@@ -25,17 +22,16 @@ export default function Cronometro({ selected, endTask } : Props ){
     function regressive(count: number = 0){
         setTimeout(() => {
             if(count > 0) {
+                setTime(count - 1) 
                 return regressive(count - 1)
             }
-            // se não for ele finaliza a tarefa 
-            endTask()
+            endTask();
         }, 1000)
     }
 
     return(
         <div className={style.cronometro}>
             <p className={style.titulo}>Escolha um card e inicie o cronômetro</p>
-            Time: {time}
             <div className={style.relogioWrapper}>
                 <Relogio time={time}/>
             </div>
